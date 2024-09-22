@@ -1,0 +1,524 @@
+.section {
+    display: flex;
+    height: 100svh;
+
+    &[data-title="acasa"] {
+        position: relative;
+
+        &>.container {
+            background-color: var(--primary-background-100);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto 1fr;
+        }
+
+        /* background-color: blueviolet; */
+        /* background-image: url(/assets/simba-on-clif.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: right; */
+
+        /* &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+        } */
+
+        .row {
+            grid-row-start: 2;
+        }
+    }
+
+    &[data-title="despre"] {
+        position: relative;
+        background-color: var(--primary-background-200);
+        z-index: 1;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            z-index: 2;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            background-image: url("/assets/leafs.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-y: bottom;
+            width: 50vw;
+            height: 50%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        &:before {
+            left: 0;
+            bottom: 0;
+        }
+
+        &:after {
+            right: 0;
+            top: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    &[data-title="counter"] {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        background-image: url("../public/assets/matei-2.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .intro {
+            font-size: 32px;
+            color: var(--primary-background-200);
+        }
+
+        .value {
+            font-size: 64px;
+            color: var(--accent-brand-400);
+        }
+
+        .label {
+            font-size: 24px;
+            color: var(--primary-background-200);
+        }
+    }
+
+    &[data-title="unde"] {
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .title,
+        .content {
+            width: 100%;
+            max-width: 1024px;
+        }
+
+        .title {
+            align-items: center;
+
+            &>span {
+                position: relative;
+
+                &:before,
+                &:after {
+                    content: "";
+                    width: 24px;
+                    height: 1px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 0 8px;
+                    background-color: var(--accent-brand-400);
+                    /* position: absolute;
+                    bottom: 50%; */
+                }
+
+                /* 
+                &:before {
+
+                } */
+            }
+        }
+
+        .image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            margin: 0;
+            padding: 0;
+
+            &>img {
+                position: absolute;
+                /* bottom: -15%;
+                height: auto; */
+                object-fit: cover;
+                height: 100%;
+                inset: 0;
+                border-radius: 24px;
+            }
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    padding: 64px 24px 24px;
+
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+
+    &[data-title="image"] {
+        max-height: 100%;
+
+        &>img {
+            width: 100%;
+            max-width: 540px;
+            height: 100%;
+        }
+    }
+
+    &[data-box="intro"] {
+        max-width: 540px;
+        text-align: center;
+    }
+
+    &[data-box="boxes"] {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &[data-box="parinti"],
+    &[data-box="nasi"],
+    &[data-box="mosi"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        /* min-width: 200px; */
+        background-color: var(--primary-background-150);
+        border: 1px solid var(--primary-background-300);
+        padding: 16px;
+        border-radius: 16px;
+        gap: 8px;
+        box-shadow: 0 0 0 0px var(--primary-background-600);
+        transition: box-shadow 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow: -4px 4px 0 0px var(--primary-background-600);
+        }
+
+        .label {
+            font-size: 16px;
+            color: var(--primary-text-400);
+        }
+
+        .value {
+            font-size: 18px;
+            color: var(--accent-brand-400);
+            font-family: "Merienda", cursive;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+}
+
+.caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    color: #BD945A;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 24px;
+
+    &>span {
+        font-family: "Merienda", cursive;
+        font-weight: 600;
+        color: var(--accent-brand-400);
+    }
+
+    &>h2 {
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.box {
+    width: 100%;
+
+    &:nth-child(2) {
+        .image {
+            padding-top: 0;
+            padding-bottom: 5%;
+
+            &:before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &[data-type="flip"] {
+        perspective: 1000px;
+
+        &>.box-inner {
+            position: relative;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        &:hover {
+            .box-inner {
+                transform: rotateY(180deg);
+            }
+
+            .box-front {
+                opacity: 0;
+            }
+
+            .box-back {
+                display: block;
+            }
+        }
+
+        .box-front,
+        .box-back {
+            /* position: absolute;
+            width: 100%;
+            height: 100%; */
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+            transition: opacity .8s ease-in-out;
+        }
+
+        .box-back {
+            position: absolute;
+            inset: 0;
+            /* display: none; */
+            /* background-image: url("../public/assets/biserica.jpg"); */
+            transform: rotateY(180deg);
+        }
+    }
+
+    .box-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background-color: var(--primary-background-150);
+        border: 1px solid var(--primary-background-400);
+        border-radius: 24px;
+        min-height: 340px;
+    }
+}
+
+.ceremony,
+.party {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &>h3 {
+        font-size: 28px;
+        color: var(--accent-brand-400);
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .link {
+        margin-top: 24px;
+    }
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.church-icon,
+.party-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--accent-brand-400);
+}
+
+
+.image {
+    position: relative;
+    width: 100%;
+    padding-top: 5%;
+    margin-bottom: 24px;
+
+    /* &:before {
+        content: "";
+        background-image: url("/assets/branch-frame.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        inset: -30px;
+    } */
+
+    &>img {
+        width: 100%;
+    }
+}
+
+.time {
+    color: var(--accent-brand-350);
+    text-align: center;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    font-size: 18px;
+    gap: 4px;
+    text-align: center;
+
+    & span {
+        text-align: center;
+    }
+
+    /* gap: 4px; */
+    /* background-color: var(--primary-background-150); */
+    /* padding: 16px; */
+    /* border-radius: 16px; */
+}
+
+
+
+@media (min-width: 1025px) {
+    .section {
+        &[data-title="acasa"] {
+            &>.container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+
+    .content {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .box {
+        width: 100%;
+        grid-column: 3 span / 3 span;
+
+        &:nth-child(2) {
+            grid-column-start: 5;
+        }
+    }
+
+    .container {
+        padding: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        &[data-title="acasa"] {
+            .row[data-title="name"] {
+                grid-row-start: 3;
+            }
+        }
+
+        &[data-title="despre"] {
+
+            &:before,
+            &:after {
+                width: 70vw;
+            }
+        }
+
+        &[data-title="counter"] {
+            height: 200px;
+        }
+    }
+
+    .row {
+        &[data-box="boxes"] {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            .row[data-box="parinti"] {
+                grid-column: span 2 / span 2;
+            }
+
+            .row[data-box="nasi"],
+            .row[data-box="mosi"] {
+                grid-row-start: 2;
+            }
+        }
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        &[data-type="flip"] {
+            &:hover {
+                .box-inner {
+                    transform: rotateX(180deg);
+                }
+            }
+
+            .box-back {
+                .image {
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+    }
+}
