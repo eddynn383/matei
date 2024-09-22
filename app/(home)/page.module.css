@@ -24,6 +24,8 @@
         overflow: hidden;
     }
 
+
+
     .top,
     .middle,
     .bottom {
@@ -50,6 +52,12 @@
             width: 0;
             opacity: 0;
             visibility: hidden;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .container {
+            background-color: var(--primary-background-250);
         }
     }
 }

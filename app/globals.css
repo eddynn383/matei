@@ -10,7 +10,7 @@ body {
 
 body {
     color: var(--primary-text-400);
-    background: var(--primary-background-100);
+    background: var(--primary-background-150);
     font-family: var(--font-roboto-slab);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -6,7 +6,7 @@
         position: relative;
 
         &>.container {
-            background-color: var(--primary-background-100);
+            /* background-color: var(--primary-background-100); */
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr auto 1fr;
@@ -113,7 +113,7 @@
 
         .intro {
             font-size: 32px;
-            color: var(--primary-background-200);
+            color: var(--primary-text-600);
         }
 
         .value {
@@ -123,11 +123,21 @@
 
         .label {
             font-size: 24px;
-            color: var(--primary-background-200);
+            color: var(--primary-text-600);
+        }
+
+        @media (prefers-color-scheme: dark) {
+
+            .intro,
+            .label {
+                color: var(--primary-text-150);
+            }
         }
     }
 
     &[data-title="unde"] {
+        min-height: 586px;
+
         .container {
             display: flex;
             flex-direction: column;
@@ -354,10 +364,16 @@
         align-items: center;
         justify-content: center;
         padding: 24px;
-        background-color: var(--primary-background-150);
+        background-color: var(--primary-background-100);
         border: 1px solid var(--primary-background-400);
         border-radius: 24px;
         min-height: 340px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .box-inner {
+            background-color: var(--primary-background-200);
+        }
     }
 }
 
@@ -436,7 +452,14 @@
     /* border-radius: 16px; */
 }
 
-
+.footer {
+    background-color: var(--primary-background-200);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 @media (min-width: 1025px) {
     .section {

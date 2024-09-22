@@ -11,7 +11,9 @@
                 300: mix($base-color, white, 70%),
                 400: $base-color,
                 500: mix($base-color, black, 70%),
+                550: mix($base-color, black, 55%),
                 600: mix($base-color, black, 40%),
+                650: mix($base-color, black, 25%),
                 700: mix($base-color, black, 10%)
             );
     }
@@ -25,7 +27,9 @@
                 300: mix($base-color, black, 70%),
                 400: $base-color,
                 500: mix($base-color, white, 70%),
+                550: mix($base-color, white, 55%),
                 600: mix($base-color, white, 40%),
+                650: mix($base-color, white, 25%),
                 700: mix($base-color, white, 10%)
             );
     }
