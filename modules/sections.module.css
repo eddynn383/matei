@@ -490,6 +490,8 @@
 
 @media (max-width: 600px) {
     .section {
+        height: auto;
+
         &[data-title="acasa"] {
             .row[data-title="name"] {
                 grid-row-start: 3;
