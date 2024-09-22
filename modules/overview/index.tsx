@@ -14,7 +14,7 @@ const Overview = () => {
                 <div className={style.row} data-title="name">
                     <div className={style.caption}>
                         <h1 className={style.name} data-animate-effect="fadeInUp">Matei</h1>
-                        <p className={style.date} data-animate-effect="fadeInUp">5 Octombrie 2024 – Craiova, România</p>
+                        <p className={style.date} data-animate-effect="fadeInUp">5 Octombrie 2024</p>
                     </div>
                 </div>
                 {/* <div className="row">
