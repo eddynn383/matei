@@ -490,7 +490,6 @@
 
 @media (max-width: 600px) {
     .section {
-        height: auto;
 
         &[data-title="acasa"] {
             .row[data-title="name"] {
@@ -507,7 +506,23 @@
         }
 
         &[data-title="counter"] {
-            height: 200px;
+            height: 360px;
+
+            .intro {
+                font-size: 20px;
+            }
+
+            .value {
+                font-size: 48px;
+            }
+
+            .label {
+                font-size: 18px;
+            }
+        }
+
+        &[data-title="unde"] {
+            height: auto;
         }
     }
 
