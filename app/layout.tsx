@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import { Merienda, Roboto_Slab, Work_Sans } from 'next/font/google'
 import "@/styles/theme.scss";
 import "./globals.css";
 import { ToggleProvider } from "@/context/toggleContext";
-
-
-// const work = Work_Sans({
-//     weight: ['300', '400', '500', '600', '700'],
-//     subsets: ['latin'],
-//     variable: "--font-work-sans"
-// })
-
-
 
 export const metadata: Metadata = {
     title: "Create Next App",

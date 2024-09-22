@@ -2,11 +2,10 @@
 
 import { useContext } from "react"
 import { Button } from "../Button"
-import { NavigationToggleProps } from "./interface"
 import { ToggleContext } from "@/context/toggleContext"
 import toggle from "./toggle.module.css"
 
-export const NavigationToggle = ({ className = toggle.container }: NavigationToggleProps) => {
+export const NavigationToggle = ({ className = toggle.container }) => {
 
     const { state, handleState } = useContext(ToggleContext)
 

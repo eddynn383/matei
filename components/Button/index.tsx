@@ -3,7 +3,6 @@
 import React from "react";
 import { ButtonProps } from "./interface";
 import button from "./button.module.css"
-import sx from "@/styles/component.module.scss";
 
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
