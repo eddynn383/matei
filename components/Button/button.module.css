@@ -302,74 +302,6 @@
             }
         }
 
-        &[data-variant="secondary"] {
-            &[data-shade="100"] {
-                background-color: var(--button-secondary-100-background-default, var(--secondary-background-100));
-                border-color: var(--button-secondary-100-border-default, var(--secondary-background-100));
-                color: var(--button-secondary-100-text-default, var(--secondary-text-400));
-
-                &:not(:disabled):hover {
-                    background-color: var(--button-secondary-100-background-hover, var(--secondary-background-300));
-                    border-color: var(--button-secondary-100-border-hover, var(--secondary-background-300));
-                    color: var(--button-secondary-100-text-hover, var(--secondary-text-400));
-                }
-
-                &:not(:disabled):focus {
-                    background-color: var(--button-secondary-100-background-focus, var(--secondary-background-100));
-                    border-color: var(--button-secondary-100-border-focus, var(--accent-brand-400));
-                    color: var(--button-secondary-100-text-focus, var(--secondary-text-400));
-                }
-
-                &[data-selected="true"],
-                &[data-state="open"] {
-                    background-color: var(--button-secondary-100-background-selected, var(--secondary-background-400));
-                    border-color: var(--button-secondary-100-border-selected, var(--secondary-background-400));
-                    color: var(--button-secondary-100-text-selected, var(--secondary-text-400));
-                }
-
-                &:disabled {
-                    background-color: var(--button-secondary-100-background-disabled, var(--secondary-background-100));
-                    border-color: var(--button-secondary-100-border-disabled, var(--secondary-background-100));
-                    color: var(--button-secondary-100-text-disabled, var(--secondary-text-400));
-                    opacity: var(--button-secondary-100-opacity, 0.5);
-                    cursor: default;
-                }
-            }
-
-            &[data-shade="200"] {
-                background-color: var(--button-secondary-200-background-default, var(--secondary-background-200));
-                border-color: var(--button-secondary-200-border-default, var(--secondary-background-200));
-                color: var(--button-secondary-200-text-default, var(--secondary-text-400));
-
-                &:not(:disabled):hover {
-                    background-color: var(--button-secondary-200-background-hover, var(--secondary-background-300));
-                    border-color: var(--button-secondary-200-border-hover, var(--secondary-background-300));
-                    color: var(--button-secondary-200-text-hover, var(--secondary-text-400));
-                }
-
-                &:not(:disabled):focus {
-                    background-color: var(--button-secondary-200-background-focus, var(--secondary-background-200));
-                    border-color: var(--button-secondary-200-border-focus, var(--accent-brand-400));
-                    color: var(--button-secondary-200-text-focus, var(--secondary-text-400));
-                }
-
-                &[data-selected="true"],
-                &[data-state="open"] {
-                    background-color: var(--button-secondary-200-background-selected, var(--secondary-background-400));
-                    border-color: var(--button-secondary-200-border-selected, var(--secondary-background-400));
-                    color: var(--button-secondary-200-text-selected, var(--secondary-text-400));
-                }
-
-                &:disabled {
-                    background-color: var(--button-secondary-200-background-disabled, var(--secondary-background-200));
-                    border-color: var(--button-secondary-200-border-disabled, var(--secondary-background-200));
-                    color: var(--button-secondary-200-text-disabled, var(--secondary-text-400));
-                    opacity: var(--button-secondary-200-opacity, 0.5);
-                    cursor: default;
-                }
-            }
-        }
-
         &[data-variant="accent"] {
             &[data-status="default"] {
                 background-color: var(--button-accent-brand-background-default, var(--accent-brand-400));
@@ -786,39 +718,6 @@
                 cursor: default;
             }
         }
-
-        &[data-variant="secondary"] {
-            background-color: var(--button-secondary-background-default, transparent);
-            border-color: var(--button-secondary-border-default, var(--secondary-background-300));
-            color: var(--button-secondary-text-default, var(--secondary-text-400));
-
-            &:not(:disabled):hover {
-                background-color: var(--button-secondary-background-hover, var(--secondary-background-300));
-                border-color: var(--button-secondary-border-hover, var(--secondary-background-300));
-                color: var(--button-secondary-text-hover, var(--secondary-text-400));
-            }
-
-            &:not(:disabled):focus {
-                background-color: var(--button-secondary-background-focus, transparent);
-                border-color: var(--button-secondary-border-focus, var(--accent-brand-400));
-                color: var(--button-secondary-text-focus, var(--secondary-text-400));
-            }
-
-            &[data-selected="true"],
-            &[data-state="open"] {
-                background-color: var(--button-secondary-background-selected, var(--secondary-background-400));
-                border-color: var(--button-secondary-border-selected, var(--secondary-background-400));
-                color: var(--button-secondary-text-selected, var(--secondary-text-400));
-            }
-
-            &:disabled {
-                background-color: var(--button-secondary-background-disabled, transparent);
-                border-color: var(--button-secondary-border-disabled, var(--secondary-background-300));
-                color: var(--button-secondary-text-disabled, var(--secondary-text-400));
-                opacity: var(--button-secondary-opacity, 0.5);
-                cursor: default;
-            }
-        }
     }
 
     &[data-mode="text"] {
@@ -863,11 +762,11 @@
                 color: var(--button-primary-100-text-default, var(--primary-text-400));
 
                 &:not(:disabled):hover {
-                    color: var(--button-primary-100-text-hover, var(--primary-text-400));
+                    color: var(--button-primary-100-text-hover, var(--accent-brand-400));
                 }
 
                 &:not(:disabled):focus {
-                    color: var(--button-primary-100-text-focus, var(--primary-text-400));
+                    color: var(--button-primary-100-text-focus, var(--primary-text-500));
                 }
 
                 &[data-selected="true"] {
@@ -885,11 +784,11 @@
                 color: var(--button-primary-200-text-default, var(--primary-text-400));
 
                 &:not(:disabled):hover {
-                    color: var(--button-primary-200-text-hover, var(--primary-text-400));
+                    color: var(--button-primary-200-text-hover, var(--accent-brand-400));
                 }
 
                 &:not(:disabled):focus {
-                    color: var(--button-primary-200-text-focus, var(--primary-text-400));
+                    color: var(--button-primary-200-text-focus, var(--primary-text-500));
                 }
 
                 &[data-selected="true"] {
@@ -899,52 +798,6 @@
                 &:disabled {
                     color: var(--button-primary-200-text-disabled, var(--primary-text-400));
                     opacity: var(--button-primary-200-opacity, 0.5);
-                    cursor: default;
-                }
-            }
-        }
-
-        &[data-variant="secondary"] {
-            &[data-shade="100"] {
-                color: var(--button-secondary-100-text-default, var(--secondary-text-400));
-
-                &:not(:disabled):hover {
-                    color: var(--button-secondary-100-text-hover, var(--secondary-text-400));
-                }
-
-                &:not(:disabled):focus {
-                    color: var(--button-secondary-100-text-focus, var(--secondary-text-400));
-                }
-
-                &[data-selected="true"] {
-                    color: var(--button-secondary-100-text-selected, var(--secondary-text-400));
-                }
-
-                &:disabled {
-                    color: var(--button-secondary-100-text-disabled, var(--secondary-text-400));
-                    opacity: var(--button-secondary-100-opacity, 0.5);
-                    cursor: default;
-                }
-            }
-
-            &[data-shade="200"] {
-                color: var(--button-secondary-200-text-default, var(--secondary-text-400));
-
-                &:not(:disabled):hover {
-                    color: var(--button-secondary-200-text-hover, var(--secondary-text-400));
-                }
-
-                &:not(:disabled):focus {
-                    color: var(--button-secondary-200-text-focus, var(--secondary-text-400));
-                }
-
-                &[data-selected="true"] {
-                    color: var(--button-secondary-200-text-selected, var(--secondary-text-400));
-                }
-
-                &:disabled {
-                    color: var(--button-secondary-200-text-disabled, var(--secondary-text-400));
-                    opacity: var(--button-secondary-200-opacity, 0.5);
                     cursor: default;
                 }
             }
