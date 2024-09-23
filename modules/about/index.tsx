@@ -8,13 +8,13 @@ const About = () => {
     return (
         <section id="despre" className={style.section} data-title="despre">
             <div className={style.container}>
-                <div className={style.description}>
+                <div className={style.description} data-animate-effect="fadeSlideUp">
                     {/* <div className="img"><img src="https://www.inviteme.ro/media/cache/square_thumb_800/uploads/66e8590231199/66e85e63077ae.jpg" alt="" /></div> */}
 
                     <p>Dacă ai ajuns aici înseamnă că țin la tine și m-aș bucura enorm dacă ai fi alături de mine într-o zi atât de specială!</p>
                 </div>
                 <div className={style.row} data-box="boxes">
-                    <div className={style.box} data-type="flip">
+                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideLeft">
                         <div className={style["box-inner"]}>
                             <div className={style["box-front"]}>
                                 <div className={style.text}>
@@ -28,10 +28,8 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="col-md-12 text-center animate-box fadeInUp animated" data-animate-effect="fadeInUp"> */}
-                        {/* </div> */}
                     </div>
-                    <div className={style.box} data-type="flip">
+                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideDown">
                         <div className={style["box-inner"]}>
                             <div className={style["box-front"]}>
                                 <div className={style.text}>
@@ -45,13 +43,8 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="col-md-12 text-center animate-box fadeInUp animated" data-animate-effect="fadeInUp"> */}
-                        {/* </div> */}
                     </div>
-
-
-
-                    <div className={style.box} data-type="flip">
+                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideRight">
                         <div className={style["box-inner"]}>
                             <div className={style["box-front"]}>
                                 <div className={style.text}>
@@ -65,8 +58,6 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="col-md-12 text-center animate-box fadeInUp animated" data-animate-effect="fadeInUp"> */}
-                        {/* </div> */}
                     </div>
                 </div>
             </div>

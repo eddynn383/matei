@@ -41,19 +41,19 @@ const Counter = () => {
             </div>
             <div className={style.row}>
                 <div className={style.box}>
-                    <span className={style.value}>{days}</span>
+                    <span className={style.value} data-animate-effect="flip">{days}</span>
                     <span className={style.label}>Zile</span>
                 </div>
                 <div className={style.box}>
-                    <span className={style.value}>{hours}</span>
+                    <span className={style.value} data-animate-effect="flip">{hours}</span>
                     <span className={style.label}>Ore</span>
                 </div>
                 <div className={style.box}>
-                    <span className={style.value}>{minutes}</span>
+                    <span className={style.value} data-animate-effect="flip">{minutes}</span>
                     <span className={style.label}>Minute</span>
                 </div>
                 <div className={style.box}>
-                    <span className={style.value}>{seconds}</span>
+                    <span className={style.value} data-animate-effect="flip">{seconds}</span>
                     <span className={style.label}>Secunde</span>
                 </div>
             </div>

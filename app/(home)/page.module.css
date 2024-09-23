@@ -81,8 +81,6 @@
     overflow: auto;
 }
 
-@media (prefers-color-scheme: dark) {}
-
 @media (max-width: 1024px) {
     .sidebar {
         width: calc(100% - 68px);

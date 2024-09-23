@@ -2,6 +2,7 @@ import Footer from "@/modules/footer";
 import styles from "./page.module.css";
 
 import Sidebar from "@/modules/Sidebar";
+import { ActiveSectionProvider } from "@/context/activeSectionContext";
 
 const HomeLayout = async ({
     children
@@ -10,13 +11,15 @@ const HomeLayout = async ({
 }) => {
 
     return (
-        <div className={styles.layout}>
-            <Sidebar />
-            <main className={styles.main}>
-                {children}
-                <Footer />
-            </main>
-        </div>
+        <ActiveSectionProvider>
+            <div className={styles.layout}>
+                <Sidebar />
+                <main className={styles.main}>
+                    {children}
+                    <Footer />
+                </main>
+            </div>
+        </ActiveSectionProvider>
     );
 }
 

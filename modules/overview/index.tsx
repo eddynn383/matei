@@ -8,22 +8,15 @@ const Overview = () => {
         <section id="acasa" className={style.section} data-title="acasa">
             {/* <div className="overlay"></div> */}
             <div className={style.container}>
-                <div className={style.row} data-title="image">
+                <div className={style.row} data-title="image" data-animate-effect="fadeSlideUp">
                     <Image src={simon} alt="simon" />
                 </div>
                 <div className={style.row} data-title="name">
                     <div className={style.caption}>
-                        <h1 className={style.name} data-animate-effect="fadeInUp">Matei</h1>
-                        <p className={style.date} data-animate-effect="fadeInUp">5 Octombrie 2024</p>
+                        <h1 className={style.name} data-animate-effect="fadeSlideUp">Matei</h1>
+                        <p className={style.date} data-animate-effect="fadeSlideDown">5 Octombrie 2024</p>
                     </div>
                 </div>
-                {/* <div className="row">
-                    <div className="col-md-12">
-                        <div className="arrow bounce text-center">
-                            <a href="#couple"> <i className="ti-heart"></i> </a>
-                        </div>
-                    </div>
-                </div> */}
             </div>
         </section>
     )

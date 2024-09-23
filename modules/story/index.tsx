@@ -7,10 +7,10 @@ const Story = () => {
         <section id="eveniment" className={style.section} data-title="eveniment">
             <div className={style.container}>
                 <div className={style.row}>
-                    <div className={style.image}>
+                    <div className={style.image} data-animate-effect="fadeSlideLeft">
                         <Image src={Matei} alt="Matei si Mama" />
                     </div>
-                    <div className={style.text} data-animate-effect="fadeInRight">
+                    <div className={style.text} data-animate-effect="fadeSlideRight">
                         <div className={style.title}>
                             <span>Te invit cu drag la</span>
                             <h2>Botezul meu.</h2>
