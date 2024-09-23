@@ -55,10 +55,6 @@ const Where = () => {
                                         <span>Calea Severinului, 13</span>
                                         <span>Craiova, România</span>
                                     </div>
-                                    {/* <div className={style.link}>
-                                    <Button variant="accent" mode="text" content="text-icon">Vezi hartă <FontAwesomeIcon icon={faChevronRight} className={style.icon} /></Button>
-                                </div> */}
-                                    {/* <p><i className="ti-direction"></i> <a href="javascript:;" className="hover-arrow directionsButton" data-lat="44.3364632" data-lng="23.765198">Vezi hartă <span className="fa fa-arrow-right"></span></a></p> */}
                                 </div>
                             </div>
                             <div className={style["box-back"]}>

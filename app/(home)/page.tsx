@@ -5,13 +5,12 @@ import About from "@/modules/about";
 import Where from "@/modules/where";
 import Counter from "@/modules/counter";
 import Story from "@/modules/story";
-// import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 
 import { useActiveSection } from "@/context/activeSectionContext"
 import { useEffect } from "react";
 
-export const useIntersectionObserver = () => {
+const useIntersectionObserver = () => {
     const { setActiveSection } = useActiveSection();
 
     useEffect(() => {
