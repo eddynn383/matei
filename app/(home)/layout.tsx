@@ -1,7 +1,7 @@
-import Footer from "@/modules/Footer";
+import Footer from "@/modules/footer";
 import styles from "./page.module.css";
 
-import Sidebar from "@/modules/Sidebar";
+import Sidebar from "@/modules/sidebar";
 import { ActiveSectionProvider } from "@/context/activeSectionContext";
 
 const HomeLayout = async ({
