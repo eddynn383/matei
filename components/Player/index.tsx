@@ -47,7 +47,7 @@ export const Player = () => {
 
     return (
         <div className={player.container}>
-            <audio ref={audioRef} src="/assets/circle-of-life.mp3" />
+            <audio ref={audioRef} src="/audio/circle-of-life.mp3" />
             <div className={player.controlls}>
                 {!isPlaying ? (
                     <Button content="icon" size="S" onClick={handlePlay}><FontAwesomeIcon icon={faPlay} /></Button>
