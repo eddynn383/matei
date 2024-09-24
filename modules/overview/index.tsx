@@ -7,7 +7,6 @@ const Overview = () => {
 
     return (
         <section id="acasa" className={style.section} data-title="acasa">
-            {/* <div className="overlay"></div> */}
             <div className={style.player}>
                 <Player />
             </div>

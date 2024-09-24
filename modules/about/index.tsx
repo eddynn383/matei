@@ -9,8 +9,6 @@ const About = () => {
         <section id="despre" className={style.section} data-title="despre">
             <div className={style.container}>
                 <div className={style.description} data-animate-effect="fadeSlideUp">
-                    {/* <div className="img"><img src="https://www.inviteme.ro/media/cache/square_thumb_800/uploads/66e8590231199/66e85e63077ae.jpg" alt="" /></div> */}
-
                     <p>Dacă ai ajuns aici înseamnă că țin la tine și m-aș bucura enorm dacă ai fi alături de mine într-o zi atât de specială!</p>
                 </div>
                 <div className={style.row} data-box="boxes">
@@ -19,7 +17,7 @@ const About = () => {
                             <div className={style["box-front"]}>
                                 <div className={style.text}>
                                     <span className={style.label}>Nașii</span>
-                                    <span className={style.value}>Alexandra si Flavius</span>
+                                    <span className={style.value}>Alexandra &amp; Flavius</span>
                                 </div>
                             </div>
                             <div className={style["box-back"]}>
@@ -33,7 +31,7 @@ const About = () => {
                         <div className={style["box-inner"]}>
                             <div className={style["box-front"]}>
                                 <div className={style.text}>
-                                    <span className={style.label}>Dragii mei parinti</span>
+                                    <span className={style.label}>Dragii mei parinți</span>
                                     <span className={style.value}>Monica &amp; Eduard</span>
                                 </div>
                             </div>
@@ -49,7 +47,7 @@ const About = () => {
                             <div className={style["box-front"]}>
                                 <div className={style.text}>
                                     <span className={style.label}>Moșii</span>
-                                    <span className={style.value}>Oana si Alex</span>
+                                    <span className={style.value}>Oana &amp; Alex</span>
                                 </div>
                             </div>
                             <div className={style["box-back"]}>

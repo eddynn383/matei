@@ -47,7 +47,7 @@ const Where = () => {
                                         <span>Sâmbătă, 5 Octombrie 2024, 19:00</span>
                                     </div>
                                     <div className={style.address}>
-                                        <span>Restaurant Craiovita</span>
+                                        <span>Restaurant Craiovița</span>
                                         <span>Calea Severinului, 13</span>
                                         <span>Craiova, România</span>
                                     </div>
