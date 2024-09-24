@@ -1,15 +1,15 @@
 "use client"
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import Image from "next/image";
 import { NavigationMenu } from "@/components/NavigationMenu";
 import { NavigationToggle } from "@/components/NavigationToggle";
-import { Button } from "@/components/Button";
+import { ToggleContext } from "@/context/toggleContext";
+import { Player } from "@/components/Player";
 import Lion from "@/public/assets/lion-head.svg"
 import Arabesque from "@/public/assets/aragesque-line-2.svg"
 import styles from "@/app/(home)/page.module.css";
-import { ToggleContext } from "@/context/toggleContext";
 
 const Sidebar = () => {
 
@@ -51,6 +51,7 @@ const Sidebar = () => {
                     <NavigationMenu data={navData} scroll={true} />
                 </div>
                 <div className={styles.bottom}>
+                    <Player />
                     <div className={styles.decoration}>
                         <Image src={Arabesque} alt="Arabesque" />
                     </div>

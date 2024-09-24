@@ -15,11 +15,17 @@ export const useIntersectionObserver = () => {
 
                 section.setAttribute('data-viewport', inViewport.toString());
 
+                const firstView = section.getAttribute('data-first-view');
+
+                if (inViewport && firstView === 'false') {
+                    section.setAttribute('data-first-view', 'true');
+                }
+
                 if (inViewport) {
                     setActiveSection(section.id)
                 }
             })
-        }, { threshold: 0.5 })
+        }, { threshold: 0.2 })
         sections.forEach((section) => observer.observe(section))
 
         return () => {

@@ -82,7 +82,7 @@
         }
 
         .row {
-            grid-row-start: 2;
+            width: 50%;
         }
 
         &[data-viewport="true"] {
@@ -342,6 +342,14 @@
         font-size: 20px;
         line-height: 1.6;
     }
+
+    @media (orientation: landscape) {
+
+        &[data-title="despre"],
+        &[data-title="eveniment"] {
+            height: auto;
+        }
+    }
 }
 
 .container {
@@ -445,7 +453,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
-    gap: 16px;
+    gap: 24px;
 }
 
 .box {
@@ -678,9 +686,14 @@
     .section {
 
         &[data-title="acasa"] {
-            .row[data-title="name"] {
-                grid-row-start: 3;
+
+            .row {
+                width: 100%;
             }
+
+            /* [data-title="name"] {
+                grid-row-start: 3;
+            } */
         }
 
         &[data-title="despre"] {
