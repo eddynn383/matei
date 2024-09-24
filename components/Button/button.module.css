@@ -770,7 +770,7 @@
                 }
 
                 &[data-selected="true"] {
-                    color: var(--button-primary-100-text-selected, var(--primary-text-400));
+                    color: var(--button-primary-100-text-selected, var(--accent-brand-400));
                 }
 
                 &:disabled {
@@ -792,7 +792,7 @@
                 }
 
                 &[data-selected="true"] {
-                    color: var(--button-primary-200-text-selected, var(--primary-text-400));
+                    color: var(--button-primary-200-text-selected, var(--accent-brand-400));
                 }
 
                 &:disabled {

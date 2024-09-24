@@ -7,12 +7,14 @@ import { Button } from "../Button";
 import navigation from "@/components/NavigationMenu/navigation.module.css"
 import { useContext } from "react";
 import { ToggleContext } from "@/context/toggleContext";
+import { useActiveSection } from "@/context/activeSectionContext";
 
 export const NavigationMenuItem = ({ title, path, scrollToSection = false }: NavigationMenuItemProps) => {
     const pathname = usePathname();
     const { handleState } = useContext(ToggleContext)
+    const { activeSection } = useActiveSection();
 
-    console.log(pathname)
+    console.log(activeSection)
 
     const isActive =
         (pathname === "/" && path === "/") ||
@@ -27,7 +29,7 @@ export const NavigationMenuItem = ({ title, path, scrollToSection = false }: Nav
 
     return (
         <>
-            {scrollToSection && <Button mode="text" variant="primary" onClick={() => scrollToSectionHandler(path)}>{title}</Button>}
+            {scrollToSection && <Button mode="text" variant="primary" selected={activeSection === path ? true : false} onClick={() => scrollToSectionHandler(path)}>{title}</Button>}
             {!scrollToSection && <Link className={navigation.item} href={path} title={title} data-active={isActive}>{title}</Link>}
         </>
     )
