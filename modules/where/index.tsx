@@ -2,7 +2,6 @@ import Image from "next/image";
 import style from "@/modules/sections.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChampagneGlasses, faChevronRight, faChurch, faClock, faLocationDot, faSignsPost } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "@/components/Button";
 import Biserica from "@/public/assets/biserica.jpg"
 import Hotel from "@/public/assets/hotel.webp"
 
@@ -29,9 +28,6 @@ const Where = () => {
                                         <span>Strada C. S. Nicolaescu Plopșor, 3</span>
                                         <span>Craiova, România</span>
                                     </div>
-                                    {/* <div className={style.link}>
-                                        <Button variant="accent" mode="text" content="text-icon">Vezi hartă <FontAwesomeIcon icon={faChevronRight} className={style.icon} /></Button>
-                                    </div> */}
                                 </div>
                             </div>
                             <div className={style["box-back"]}>

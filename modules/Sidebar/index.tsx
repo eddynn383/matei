@@ -6,8 +6,8 @@ import Image from "next/image";
 import { NavigationMenu } from "@/components/NavigationMenu";
 import { NavigationToggle } from "@/components/NavigationToggle";
 import { ToggleContext } from "@/context/toggleContext";
-import Lion from "@/public/assets/lion-head.svg"
-import Arabesque from "@/public/assets/aragesque-line-2.svg"
+import Lion from "@/public/assets/lion-head.svg";
+import Arabesque from "@/public/assets/aragesque-line-2.svg";
 import styles from "@/app/(home)/page.module.css";
 
 const Sidebar = () => {
