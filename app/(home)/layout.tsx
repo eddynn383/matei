@@ -1,5 +1,5 @@
+import Sidebar from "@/components/Sidebar";
 import Footer from "@/modules/footer";
-// import Sidebar from "@/modules/sidebar";
 import styles from "./page.module.css";
 
 import { ActiveSectionProvider } from "@/context/activeSectionContext";
@@ -13,7 +13,7 @@ const HomeLayout = async ({
     return (
         <ActiveSectionProvider>
             <div className={styles.layout}>
-                {/* <Sidebar /> */}
+                <Sidebar />
                 <main className={styles.main}>
                     {children}
                     <Footer />
