@@ -4,40 +4,46 @@ import style from "@/modules/sections.module.css"
 import { useEffect, useState, useRef } from "react";
 
 const Counter = () => {
-    const [days, setDays] = useState(0)
-    const [hours, setHours] = useState(0)
-    const [minutes, setMinutes] = useState(0)
-    const [seconds, setSeconds] = useState(0)
+    const [days, setDays] = useState(0);
+    const [hours, setHours] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
 
     // States for animating numbers
-    const [animatedDays, setAnimatedDays] = useState(0)
-    const [animatedHours, setAnimatedHours] = useState(0)
-    const [animatedMinutes, setAnimatedMinutes] = useState(0)
-    const [animatedSeconds, setAnimatedSeconds] = useState(0)
+    const [animatedDays, setAnimatedDays] = useState(0);
+    const [animatedHours, setAnimatedHours] = useState(0);
+    const [animatedMinutes, setAnimatedMinutes] = useState(0);
+    const [animatedSeconds, setAnimatedSeconds] = useState(0);
 
-    const sectionRef = useRef<HTMLElement | null>(null)
-    const hasAnimated = useRef(false) // To ensure the animation happens only once
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const hasAnimated = useRef(false); // To ensure the animation happens only once
 
     useEffect(() => {
-        const target = new Date("10/05/2024 18:59:59")
+        const target = new Date("10/05/2024 18:59:59");
 
-        const interval = setInterval(() => {
-            const now = new Date()
-            const difference = target.getTime() - now.getTime()
+        const updateCountdown = () => {
+            const now = new Date();
+            const difference = target.getTime() - now.getTime();
 
-            const d = Math.floor(difference / (1000 * 60 * 60 * 24))
-            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-            const s = Math.floor((difference % (1000 * 60)) / 1000)
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
 
-            setDays(d)
-            setHours(h)
-            setMinutes(m)
-            setSeconds(s)
-        }, 1000)
+            setDays(d);
+            setHours(h);
+            setMinutes(m);
+            setSeconds(s);
+        };
 
-        return () => clearInterval(interval)
-    }, [])
+        // Initial countdown update
+        updateCountdown();
+
+        // Set up the interval to keep updating the countdown every second
+        const interval = setInterval(updateCountdown, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -58,15 +64,16 @@ const Counter = () => {
             if (sectionRef.current) {
                 observer.unobserve(sectionRef.current);
             }
-        }
+        };
     }, [days, hours, minutes, seconds]);
 
     const animateNumbers = () => {
+        // Animate from 0 to the real-time countdown values
         animateValue(0, days, 1000, setAnimatedDays);
         animateValue(0, hours, 1000, setAnimatedHours);
         animateValue(0, minutes, 1000, setAnimatedMinutes);
         animateValue(0, seconds, 1000, setAnimatedSeconds);
-    }
+    };
 
     const animateValue = (start: number, end: number, duration: number, setValue: (value: number) => void) => {
         const range = end - start;
@@ -85,6 +92,16 @@ const Counter = () => {
 
         requestAnimationFrame(step);
     };
+
+    // Ensure animated values are updated in real-time after the animation finishes
+    useEffect(() => {
+        if (hasAnimated.current) {
+            setAnimatedDays(days);
+            setAnimatedHours(hours);
+            setAnimatedMinutes(minutes);
+            setAnimatedSeconds(seconds);
+        }
+    }, [days, hours, minutes, seconds]);
 
     return (
         <section ref={sectionRef} className={style.section} data-title="counter">
@@ -112,7 +129,7 @@ const Counter = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Counter;

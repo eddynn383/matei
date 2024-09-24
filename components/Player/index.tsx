@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPause, faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 import player from "./player.module.css"
 
 export const Player = () => {
@@ -38,23 +38,23 @@ export const Player = () => {
         }
     };
 
-    const handlePause = () => {
-        if (audioRef.current) {
-            audioRef.current.pause(); // Pause the playback
-            setIsPlaying(false);
-        }
-    };
+    // const handlePause = () => {
+    //     if (audioRef.current) {
+    //         audioRef.current.pause(); // Pause the playback
+    //         setIsPlaying(false);
+    //     }
+    // };
 
     return (
         <div className={player.container}>
             <audio ref={audioRef} src="/audio/circle-of-life.mp3" />
             <div className={player.controlls}>
                 {!isPlaying ? (
-                    <Button content="icon" size="S" onClick={handlePlay}><FontAwesomeIcon icon={faPlay} /></Button>
+                    <Button content="icon" mode="text" size="M" onClick={handlePlay}><FontAwesomeIcon icon={faPlay} /></Button>
                 ) : (
                     <>
-                        <Button content="icon" size="S" onClick={handlePause}><FontAwesomeIcon icon={faPause} /></Button>
-                        <Button content="icon" size="S" onClick={handleStop}><FontAwesomeIcon icon={faStop} /></Button>
+                        {/* <Button content="icon" mode="text" size="M" onClick={handlePause}><FontAwesomeIcon icon={faPause} /></Button> */}
+                        <Button content="icon" mode="text" size="M" onClick={handleStop}><FontAwesomeIcon icon={faStop} /></Button>
                     </>
                 )}
             </div>

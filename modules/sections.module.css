@@ -459,7 +459,7 @@
 
 .player {
     position: absolute;
-    top: 20px;
+    bottom: 44px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -723,7 +723,7 @@
 
             .box:nth-child(2) {
                 order: -1;
-                transform: translateY(0);
+                margin-bottom: 0;
             }
         }
 
