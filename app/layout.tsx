@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/theme.scss";
 import "./globals.css";
 import { ToggleProvider } from "@/context/toggleContext";
+import { Merienda, Roboto_Slab } from "next/font/google";
 
 export const metadata: Metadata = {
     title: "Invitatie Botez",
@@ -30,6 +31,20 @@ export const metadata: Metadata = {
     },
 };
 
+const robotoSlab = Roboto_Slab({
+    weight: ['100', '200', '300', '400', '500', '600', '700'],
+    subsets: ['latin'],
+    display: 'swap',
+    variable: "--font-roboto-slab"
+})
+
+const merienda = Merienda({
+    weight: ['300', '400', '500', '600', '700'],
+    subsets: ['latin'],
+    display: 'swap',
+    variable: "--font-merienda"
+})
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -37,7 +52,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
+            <body className={`${robotoSlab.variable} ${merienda.variable}`}>
                 <ToggleProvider>
                     {children}
                 </ToggleProvider>

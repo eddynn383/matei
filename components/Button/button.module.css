@@ -4,7 +4,7 @@
     align-items: center;
     gap: var(--button-gap, var(--gap-200, 8px));
     position: relative;
-    font-family: "Merienda", cursive;
+    font-family: var(--font-merienda);
     font-weight: 600;
     text-decoration: none;
     line-height: 18px;

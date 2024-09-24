@@ -124,16 +124,19 @@
             text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         }
 
+
         .label {
             font-size: 24px;
-            color: var(--primary-text-200);
+            color: var(--primary-text-600);
         }
 
         @media (prefers-color-scheme: dark) {
             .label {
-                color: var(--primary-text-600);
+                color: var(--primary-text-200);
             }
         }
+
+
     }
 
     &[data-title="despre"] {
@@ -183,12 +186,13 @@
             padding-top: 88px;
 
             .label {
+                font-family: var(--font-merienda);
                 font-size: 18px;
                 color: var(--accent-brand-400);
-                font-family: "Merienda", cursive;
             }
 
             .value {
+                font-family: var(--font-roboto-slab);
                 font-size: 28px;
                 color: var(--primary-text-400);
                 text-align: center;
@@ -316,10 +320,12 @@
 
         .intro {
             font-size: 32px;
+            font-weight: 300;
             color: var(--primary-text-600);
         }
 
         .value {
+            font-family: var(--font-merienda);
             font-size: 64px;
             color: var(--accent-brand-400);
             text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
@@ -383,8 +389,9 @@
     }
 
     .description {
-        color: var(--primary-text-200);
         font-size: 20px;
+        font-weight: 200;
+        color: var(--primary-text-200);
         line-height: 1.6;
     }
 
@@ -427,40 +434,6 @@
         gap: 16px;
         grid-template-columns: repeat(3, 1fr);
     }
-
-    /* &[data-box="parinti"],
-    &[data-box="nasi"],
-    &[data-box="mosi"] {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        background-color: var(--primary-background-150);
-        border: 1px solid var(--primary-background-300);
-        padding: 16px;
-        border-radius: 16px;
-        gap: 8px;
-        box-shadow: 0 0 0 0px var(--primary-background-600);
-        transition: box-shadow 0.3s ease-in-out;
-
-        &:hover {
-            box-shadow: -4px 4px 0 0px var(--primary-background-600);
-        }
-
-        .label {
-            font-size: 16px;
-            color: var(--primary-text-400);
-        }
-
-        .value {
-            font-size: 18px;
-            color: var(--accent-brand-400);
-            font-family: "Merienda", cursive;
-            font-weight: 600;
-            text-align: center;
-        }
-    } */
 }
 
 .caption {
@@ -481,7 +454,7 @@
     padding-bottom: 24px;
 
     &>span {
-        font-family: "Merienda", cursive;
+        font-family: var(--font-merienda);
         font-size: 20px;
         font-weight: 300;
         /* font-weight: 600; */
@@ -525,13 +498,21 @@
     &[data-type="flip"] {
         perspective: 1000px;
 
-        &>.box-inner {
+        & .box-inner {
             position: relative;
             transition: transform 0.8s;
             transform-style: preserve-3d;
         }
 
         &:hover {
+            .button {
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+
+
+        &[data-selected="true"] {
             .box-inner {
                 transform: rotateY(180deg);
             }
@@ -547,9 +528,6 @@
 
         .box-front,
         .box-back {
-            /* position: absolute;
-            width: 100%;
-            height: 100%; */
             -webkit-backface-visibility: hidden;
             /* Safari */
             backface-visibility: hidden;
@@ -559,9 +537,16 @@
         .box-back {
             position: absolute;
             inset: 0;
-            /* display: none; */
-            /* background-image: url("../public/assets/biserica.jpg"); */
             transform: rotateY(180deg);
+
+            .button {
+                color: var(--primary-background-200);
+
+                &:before {
+                    background-color: var(--primary-background-600);
+                    z-index: -1;
+                }
+            }
         }
 
         .image {
@@ -575,13 +560,50 @@
 
             &>img {
                 position: absolute;
-                /* bottom: -15%;
-                        height: auto; */
                 object-fit: cover;
                 height: 100%;
                 inset: 0;
                 border-radius: 23px;
             }
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 44px;
+            font-family: var(--font-roboto-slab);
+            color: var(--primary-text-200);
+            /* background-image: linear-gradient(180deg, rgba(15, 25, 10, 0) 0%, rgba(15, 25, 10, 0) 2%, rgba(15, 25, 10, 1) 100%); */
+            /* background-image: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.1) 25%, rgba(20, 20, 20, 0.2) 100%); */
+
+            opacity: 0;
+            border-radius: 0 0 24px 24px;
+            transition: .3s ease-in-out;
+            z-index: 2;
+            overflow: hidden;
+
+            &:before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: var(--primary-background-200);
+                filter: blur(0.5);
+                opacity: 0.5;
+                z-index: 0;
+            }
+        }
+
+        .toggle {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
         }
     }
 
@@ -641,21 +663,13 @@
     padding-top: 5%;
     margin-bottom: 24px;
 
-    /* &:before {
-        content: "";
-        background-image: url("/assets/branch-frame.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        inset: -30px;
-    } */
-
     &>img {
         width: 100%;
     }
 }
 
 .time {
+    font-family: var(--font-roboto-slab);
     color: var(--accent-brand-350);
     text-align: center;
 }
@@ -667,16 +681,12 @@
     font-size: 18px;
     gap: 4px;
     text-align: center;
+    font-family: var(--font-roboto-slab);
     color: var(--primary-text-200);
 
     & span {
         text-align: center;
     }
-
-    /* gap: 4px; */
-    /* background-color: var(--primary-background-150); */
-    /* padding: 16px; */
-    /* border-radius: 16px; */
 }
 
 .footer {
@@ -736,16 +746,10 @@
 
 @media (max-width: 600px) {
     .section {
-
         &[data-title="acasa"] {
-
             .row {
                 width: 100%;
             }
-
-            /* [data-title="name"] {
-                grid-row-start: 3;
-            } */
         }
 
         &[data-title="despre"] {
@@ -1058,6 +1062,23 @@
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes fadeInPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
     }
 }
 
