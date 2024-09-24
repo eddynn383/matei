@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    gap: 12px;
+}
+
+.controlls {
+    display: flex;
+    gap: 8px;
+}

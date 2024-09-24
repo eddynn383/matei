@@ -15,7 +15,7 @@ const Where = () => {
                     <h2>Unde și când</h2>
                 </div>
                 <div className={style.content}>
-                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideLeft">
+                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideRight">
                         <div className={style["box-inner"]}>
                             <div className={style["box-front"]}>
                                 <div className={style.ceremony}>
@@ -41,7 +41,7 @@ const Where = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideRight">
+                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideLeft">
                         <div className={style["box-inner"]}>
                             <div className={style["box-front"]}>
                                 <div className={style.party}>

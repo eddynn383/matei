@@ -29,7 +29,7 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideDown">
+                    <div className={style.box} data-type="flip" data-animate-effect="fadeSlideUp">
                         <div className={style["box-inner"]}>
                             <div className={style["box-front"]}>
                                 <div className={style.text}>

@@ -132,6 +132,7 @@
 
         .row[data-box="boxes"] {
             display: flex;
+            align-items: flex-end;
             gap: 24px;
             width: 100%;
             max-width: 1024px;
@@ -151,7 +152,7 @@
         }
 
         .box:nth-child(2) {
-            transform: translateY(-44px);
+            margin-bottom: 44px;
         }
 
         .box-inner {
@@ -454,6 +455,13 @@
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     gap: 24px;
+}
+
+.player {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .box {

@@ -51,7 +51,6 @@ const Sidebar = () => {
                     <NavigationMenu data={navData} scroll={true} />
                 </div>
                 <div className={styles.bottom}>
-                    <Player />
                     <div className={styles.decoration}>
                         <Image src={Arabesque} alt="Arabesque" />
                     </div>

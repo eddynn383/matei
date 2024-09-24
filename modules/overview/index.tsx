@@ -1,12 +1,16 @@
 import Image from "next/image";
 import style from "@/modules/sections.module.css"
 import simon from "@/public/assets/simba-on-clif.png"
+import { Player } from "@/components/Player";
 
 const Overview = () => {
 
     return (
         <section id="acasa" className={style.section} data-title="acasa">
             {/* <div className="overlay"></div> */}
+            <div className={style.player}>
+                <Player />
+            </div>
             <div className={style.container}>
                 <div className={style.row} data-title="image" data-animate-effect="fadeSlideUp">
                     <Image src={simon} alt="simon" />

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
+import player from "./player.module.css"
 
 export const Player = () => {
 
@@ -45,9 +46,9 @@ export const Player = () => {
     };
 
     return (
-        <div>
+        <div className={player.container}>
             <audio ref={audioRef} src="/assets/circle-of-life.mp3" />
-            <div>
+            <div className={player.controlls}>
                 {!isPlaying ? (
                     <Button content="icon" size="S" onClick={handlePlay}><FontAwesomeIcon icon={faPlay} /></Button>
                 ) : (
