@@ -840,9 +840,9 @@
         grid-template-columns: 1fr;
     }
 
-    .box {
+    /* .box {
         &[data-type="flip"] {
-            &:hover {
+            &[data-selected="true"] {
                 .box-inner {
                     transform: rotateX(180deg);
                 }
@@ -854,7 +854,7 @@
                 }
             }
         }
-    }
+    } */
 }
 
 .section[data-viewport="false"] {
