@@ -7,8 +7,9 @@ import { Button } from "@/components/Button";
 import { useState, useEffect } from "react";
 
 interface TiltData {
-    gamma: number;
-    beta: number;
+    rotateX: number;
+    rotateY: number;
+    rotateZ: number;
 }
 
 const About = () => {
@@ -16,15 +17,31 @@ const About = () => {
     const [showNasi, setShowNasi] = useState<boolean>(false);
     const [showMosi, setShowMosi] = useState<boolean>(false);
 
-    const [tiltData, setTiltData] = useState<TiltData>({ gamma: 0, beta: 0 });
+    const [tiltData, setTiltData] = useState<TiltData>({
+        rotateX: 0,
+        rotateY: 0,
+        rotateZ: 0,
+    });
 
-    // Listen to the gyroscope and update the tilt data
+    // Use gyroscope for subtle tilt effect
     useEffect(() => {
         const handleOrientation = (event: DeviceOrientationEvent) => {
-            const { gamma, beta } = event; // Gamma: left-right, Beta: front-back tilt
+            let { alpha, gamma, beta } = event; // Alpha: Z axis (compass), Gamma: left-right, Beta: front-back
+
+            if (alpha == null || gamma == null || beta == null) return;
+
+            // Adjust based on the fact that when the phone is held naturally upright, beta is around 90 degrees
+            beta = beta - 90;
+
+            // Scale down the tilt effect for subtleness (dividing by larger numbers will reduce tilt)
+            const rotateY = gamma / 15; // Horizontal tilt (Y axis)
+            const rotateX = beta / 15; // Vertical tilt (X axis)
+            const rotateZ = alpha / 30; // Rotation along Z-axis (rolling effect, like turning the phone around the depth axis)
+
             setTiltData({
-                gamma: gamma || 0,
-                beta: beta || 0,
+                rotateX,
+                rotateY,
+                rotateZ,
             });
         };
 
@@ -37,9 +54,9 @@ const About = () => {
         };
     }, []);
 
-    // Adjust the tilt rotation to make it face the user
-    const tiltStyle = (gamma: number, beta: number) => ({
-        transform: `rotateY(${gamma * 0.5}deg) rotateX(${beta * -0.5}deg)`,
+    // Apply the subtle tilt style based on the gyroscope data
+    const tiltStyle = (rotateX: number, rotateY: number, rotateZ: number) => ({
+        transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`,
     });
 
     return (
@@ -57,7 +74,7 @@ const About = () => {
                         data-type="flip"
                         data-selected={showNasi}
                         data-animate-effect="fadeSlideLeft"
-                        style={tiltStyle(tiltData.gamma, tiltData.beta)}
+                        style={tiltStyle(tiltData.rotateX, tiltData.rotateY, tiltData.rotateZ)}
                     >
                         <Button
                             className={style.toggle}
@@ -93,7 +110,7 @@ const About = () => {
                         data-type="flip"
                         data-selected={showParinti}
                         data-animate-effect="fadeSlideUp"
-                        style={tiltStyle(tiltData.gamma, tiltData.beta)}
+                        style={tiltStyle(tiltData.rotateX, tiltData.rotateY, tiltData.rotateZ)}
                     >
                         <Button
                             className={style.toggle}
@@ -128,7 +145,7 @@ const About = () => {
                         data-type="flip"
                         data-selected={showMosi}
                         data-animate-effect="fadeSlideRight"
-                        style={tiltStyle(tiltData.gamma, tiltData.beta)}
+                        style={tiltStyle(tiltData.rotateX, tiltData.rotateY, tiltData.rotateZ)}
                     >
                         <Button
                             className={style.toggle}
