@@ -1,10 +1,10 @@
 import Image from "next/image";
-import style from "@/modules/sections.module.css"
-import Parintii from "@/public/assets/parintii.jpg"
-import Nasii from "@/public/assets/nasii.jpg"
-import Mosii from "@/public/assets/mosii.jpg"
+import style from "@/modules/sections.module.css";
+import Parintii from "@/public/assets/parintii.jpg";
+import Nasii from "@/public/assets/nasii.jpg";
+import Mosii from "@/public/assets/mosii.jpg";
 import { Button } from "@/components/Button";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 interface TiltData {
     gamma: number;
@@ -12,12 +12,13 @@ interface TiltData {
 }
 
 const About = () => {
-    const [showParinti, setShowParinti] = useState<boolean>(false)
-    const [showNasi, setShowNasi] = useState<boolean>(false)
-    const [showMosi, setShowMosi] = useState<boolean>(false)
+    const [showParinti, setShowParinti] = useState<boolean>(false);
+    const [showNasi, setShowNasi] = useState<boolean>(false);
+    const [showMosi, setShowMosi] = useState<boolean>(false);
 
     const [tiltData, setTiltData] = useState<TiltData>({ gamma: 0, beta: 0 });
 
+    // Listen to the gyroscope and update the tilt data
     useEffect(() => {
         const handleOrientation = (event: DeviceOrientationEvent) => {
             const { gamma, beta } = event; // Gamma: left-right, Beta: front-back tilt
@@ -36,8 +37,9 @@ const About = () => {
         };
     }, []);
 
+    // Adjust the tilt rotation to make it face the user
     const tiltStyle = (gamma: number, beta: number) => ({
-        transform: `rotateY(${gamma / 10}deg) rotateX(${beta / 10}deg)`,
+        transform: `rotateY(${gamma * 0.5}deg) rotateX(${beta * -0.5}deg)`,
     });
 
     return (
@@ -159,6 +161,6 @@ const About = () => {
             </div>
         </section>
     );
-}
+};
 
 export default About;
